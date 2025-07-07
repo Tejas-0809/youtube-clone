@@ -1,0 +1,247 @@
+.comments-container {
+  margin-top: 24px;
+  background: var(--bgLighter);
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid var(--soft);
+}
+
+.comments-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--soft);
+}
+
+.comment-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--soft);
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.comment-input-wrapper {
+  flex: 1;
+}
+
+.comment-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 12px;
+  border: 1px solid var(--soft);
+  border-radius: 6px;
+  background: var(--bgLighter);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus {
+  border-color: #2563eb;
+}
+
+.comment-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.comment-input::placeholder {
+  color: var(--textSoft);
+}
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.comment-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.comment-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.comment-btn-cancel {
+  background: transparent;
+  color: var(--textSoft);
+  border: 1px solid var(--soft);
+}
+
+.comment-btn-cancel:hover:not(:disabled) {
+  background: var(--soft);
+}
+
+.comment-btn-post,
+.comment-btn-save {
+  background: #2563eb;
+  color: white;
+}
+
+.comment-btn-post:hover:not(:disabled),
+.comment-btn-save:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comments-empty {
+  text-align: center;
+  color: var(--textSoft);
+  padding: 40px 20px;
+  font-style: italic;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px dashed var(--soft);
+}
+
+.comment-item {
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--soft);
+  transition: transform 0.2s;
+}
+
+.comment-item:hover {
+  transform: translateY(-1px);
+}
+
+.comment-view {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  position: relative;
+}
+
+.comment-edit {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.comment-menu {
+  margin-left: auto;
+  position: relative;
+}
+
+.comment-menu-icon {
+  cursor: pointer;
+  color: var(--textSoft);
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.comment-menu-icon:hover {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.comment-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--bgLighter);
+  border: 1px solid var(--soft);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  min-width: 100px;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: var(--soft);
+}
+
+.dropdown-item-delete {
+  color: #ef4444;
+}
+
+.dropdown-item-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.comments-loading,
+.comments-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--textSoft);
+  background: var(--bgLighter);
+  border-radius: 8px;
+  border: 1px solid var(--soft);
+}
+
+.comments-error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .comments-container {
+    padding: 16px;
+  }
+  
+  .comment-form,
+  .comment-edit {
+    gap: 8px;
+  }
+  
+  .comment-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .comment-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .comment-btn {
+    padding: 10px;
+  }
+}
